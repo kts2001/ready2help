@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
-import { IndexModule } from './ticketview/index.module';
-import { IndexComponent } from './ticketview/index.component';
-import { PartialsModule } from './ticketview/partials/partials.module';
-import {ListComponent} from "./ticketview/ticketlist/list.component";
-import {ListModule} from "./ticketview/ticketlist/list.module";
+import { IndexModule } from './ticketlist/index.module';
+import { IndexComponent } from './ticketlistindex.component';
+import { PartialsModule } from './ticketlist/partials/partials.module';
+import {ListComponent} from "./ticketlist/ticketlist/list.component";
+import {ListModule} from "./ticketlist/ticketlist/list.module";
 
 
 
