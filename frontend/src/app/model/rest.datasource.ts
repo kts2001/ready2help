@@ -22,21 +22,21 @@ export class RestDataSource {
     }
 
     getInventoryList(): Observable<Tickets[]> {
-        return this.http.get<Tickets[]>(this.baseUrl + "Tickets/list");
+        return this.http.get<Tickets[]>(this.baseUrl + "ticketlist/list");
     }
 
     insertInventory(item: Tickets): Observable<Tickets> {
-        return this.http.post<Tickets>(this.baseUrl + "Tickets/add",
+        return this.http.post<Tickets>(this.baseUrl + "ticketlist/add",
         item, this.getOptions());
     }
 
     updateInventory(item: Tickets): Observable<Tickets> {
-        return this.http.put<Tickets>(`${this.baseUrl} Tickets/edit/${item._id})`,
+        return this.http.put<Tickets>(`${this.baseUrl} tickets/edit/${item._id})`,
         item, this.getOptions());
     }
 
     deleteInventory(id: string): Observable<ResponseModel> {
-        return this.http.delete<any>(`${this.baseUrl}Tickets/delete/${id}`,
+        return this.http.delete<any>(`${this.baseUrl}tickets/delete/${id}`,
         this.getOptions()).pipe(map(response => {
             return response;
         }));
