@@ -6,7 +6,7 @@ import { TicketsRepository } from "../../model/tickets.repository";
 
 
 @Component({
-    selector: "ticketlist-Tickets",
+    selector: "ticketlist-ticket",
     templateUrl: "list.component.html"
 })
 
@@ -19,8 +19,8 @@ export class ListComponent {
         private router: Router)
         { }
 
-        get ticketlist():Tickets[] {
-            return this.repository.getInventory();
+        get ticket():Tickets[] {
+            return this.repository.getTickets();
         }
 
         deleteMethod(id: string) {
