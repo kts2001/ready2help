@@ -21,29 +21,29 @@ export class RestDataSource {
         this.baseUrl = this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
     }
 
-    getInventoryList(): Observable<Tickets[]> {
+    getTicketList(): Observable<Tickets[]> {
         return this.http.get<Tickets[]>(this.baseUrl + "ticketlist/list");
     }
 
-    insertInventory(item: Tickets): Observable<Tickets> {
+    insertTickets(item: Tickets): Observable<Tickets> {
         return this.http.post<Tickets>(this.baseUrl + "ticketlist/add",
         item, this.getOptions());
     }
 
-    updateInventory(item: Tickets): Observable<Tickets> {
-        return this.http.put<Tickets>(`${this.baseUrl} tickets/edit/${item._id})`,
+    updateTickets(item: Tickets): Observable<Tickets> {
+        return this.http.put<Tickets>(`${this.baseUrl} ticketlist/edit/${item._id})`,
         item, this.getOptions());
     }
 
-    deleteInventory(id: string): Observable<ResponseModel> {
-        return this.http.delete<any>(`${this.baseUrl}tickets/delete/${id}`,
+    deleteTickets(id: string): Observable<ResponseModel> {
+        return this.http.delete<any>(`${this.baseUrl}ticketlist/delete/${id}`,
         this.getOptions()).pipe(map(response => {
             return response;
         }));
     }
 
     authenticate(username: string, pass: string): Observable<boolean> {
-        return this.http.post<any>(this.baseUrl + "users/sigin", {
+        return this.http.post<any>(this.baseUrl + "users/signin", {
         }).pipe(map(response => {
             this.auth_token = response.sucess ? response.token : null;
             return response.sucess;
