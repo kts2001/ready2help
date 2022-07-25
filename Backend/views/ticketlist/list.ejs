@@ -1,0 +1,71 @@
+<!--
+Ready2Help
+COMP299-SEC004
+July-14-2022
+list.ejs
+-->
+
+<%- include ../partials/header.ejs %>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <h3>Tickets Dashboard </h3>
+   
+ 
+      <br>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <tr>
+              <th>Customer Name</th>
+              <th class="text-center">Customer Email</th>
+              <th class="text-center">Ticket Priority</th>
+              <th class="text-center">Ticket Description</th>
+              <th class="text-center"></th>
+              <th class="text-center"></th>
+            </tr>
+           
+        
+              <% for(let count = 0; count < ticket.length; count++) { %>
+                <tr>
+                    <td class="text-center"><%= ticket[count].name %></td>
+                    <td class="text-center"><%= ticket[count].email %></td>
+                        <td class="text-center"><%= ticket[count].ticketPriority %></td>
+                        <td class="text-center"><%= ticket[count].ticketDescription %></td>
+                      
+                      <% if(ticket[count].ticketStatus == 'Cancelled'){ %>
+
+                        <td class="text-center" colspan="2">
+                          <a class="btn btn-success btn-sm">
+                            <i class="fas fa-pencil-alt"></i>Ticket Status Cancelled</a>
+    
+                        </td>                            
+
+                            <%} 
+                               else { %>                       
+                    <td class="text-center">
+                      <a href="edit/<%= ticket[count]._id %>" class="btn btn-primary btn-sm">
+                        <i class="fas fa-pencil-alt"></i> Edit</a>
+
+                    </td>
+
+                    <td class="text-center">
+                      <a href="delete/<%= ticket[count]._id %>" class="btn btn-danger btn-sm" role="button">
+                        <i class="fas fa-trash-alt"></i> Delete</a>
+
+                    </td>
+                    <% } %>
+                  </tr>
+              <% } %>
+            </table>
+          </tbody>
+      </div>
+       <div class="col-md-offset-1 col-md-10 text-center">
+        <ul class="pagination pagination-lg pager" id="myPager"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include ../partials/footer.ejs %>

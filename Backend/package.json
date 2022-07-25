@@ -1,0 +1,36 @@
+{
+  "name": "group2",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.4.6",
+    "morgan": "~1.9.1",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "description": "GROUP2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SabaMAziz/Group2.git"
+  },
+  "keywords": [
+    "Group2"
+  ],
+  "author": "Group2",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SabaMAziz/Group2/issues"
+  },
+  "homepage": "https://github.com/SabaMAziz/Group2#readme",
+  "main": "server.js"
+}

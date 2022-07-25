@@ -1,0 +1,63 @@
+<!-- Group 2-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title><%= title %></title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel='stylesheet' href='/@fortawesome/fontawesome-free/css/all.min.css' />
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+ 
+  </head>
+
+  <body>
+
+     <!-- Main Nav bar-->
+     <nav class="navbar navbar-inverse" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <img src="/images/logo.jpg" alt="logo" style="width:90px;">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><i class="fa fa-bookmark-o"></i> Ready2Help</a>
+      </div>
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+            <li class="active"><a href="/auth/signin"><i class="fa fa-home fa-lg"></i> Sign In</a></li>
+      
+          
+            <li class="active"><a href="/ticketlist/add"><i class="fa fa-book fa-lg">
+            </i> Create A Ticket</a></li>
+           
+              <li><a href="/ticketlist/list"><i class="fa fa-book fa-lg">
+              </i> Tickets List</a></li>
+
+              <li class="active"><a href="/"><i class="fa fa-home fa-lg"></i> Home</a></li>
+        </ul>
+
+         <!-- <li class="nav-item">
+          <% if (typeof userName == 'string' && userName) { %>
+            <a class="nav-link" href="/users/signout" onclick="return confirm('Are you sure?')"><i class="fa fa-door-open"></i> Sign-Out (<%= userName %>)</a>
+          <% } else { %>
+            <a class="nav-link" href="/users/signin"><i class="fa fa-door-closed"></i> Sign-in</a>
+          <% } %>            
+        </li>  -->     
+
+
+      </div><!-- /.navbar-collapse -->
+    </nav>
+  
+
