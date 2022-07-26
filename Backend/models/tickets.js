@@ -9,7 +9,7 @@ let mongoose = require('mongoose');
 
 // create a model class for the ticket inventory
 
-let ticketsViews = mongoose.Schema(
+let tickets = mongoose.Schema(
     {
       name: String,
       email: String,
@@ -28,4 +28,4 @@ let ticketsViews = mongoose.Schema(
 
 
 
-module.exports = mongoose.model('Tickets', ticketsViews);
+module.exports = mongoose.model('Tickets', tickets);
