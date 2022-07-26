@@ -15,7 +15,7 @@ export class HeaderComponent {
   logout() {
     if (confirm('Are you sure?')) {
       this.auth.clear();
-      this.router.navigateByUrl("/");
+      this.router.navigateByUrl("/ticketlist/list");
     }
   }
 }

@@ -6,6 +6,7 @@ let compress = require('compression');
 let methodOverride = require('method-override');
 let passport = require('passport');
 let errorHandler = require('./error-handler');
+let cors = require('cors');
 
 var app = express();
 
@@ -13,7 +14,9 @@ var indexRouter = require('../routes/index');
 var usersRouter = require('../routes/users');
 var ticketlistRouter = require('../routes/ticketlist');
 
-
+// Enable cors
+app.use(cors());
+app.options('*', cors());
 
 app.use(logger('dev'));
 app.use(express.json());

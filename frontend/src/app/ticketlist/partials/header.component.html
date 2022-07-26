@@ -38,7 +38,7 @@
 
                 <li class="nav-item">
               <a *ngIf="auth.username != null" class="nav-link" routerLink="" (click)="logout()">Sign Out  ({{ auth.username}})</a>
-              <a *ngIf="auth.username == null" class="nav-link" routerLink="/auth/signin"><i class="fa fa-home fa-lg"></i>SignIn</a>
+              <a *ngIf="auth.username == null" class="nav-link" routerLink="/users/signin"><i class="fa fa-home fa-lg"></i>SignIn</a>
             </li>
         </ul> 
 
