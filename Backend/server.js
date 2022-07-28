@@ -9,11 +9,17 @@
  var http = require('http');
 //  const configurePassport = require('./config/passport');
  var passportConfig = require('./config/local');
+ const mongo = require('mongoose')
+
+ var db = mongo.connect('mongodb+srv://readyhelp:0lWG4LbmCqJuTPIP@cluster3.mwtod.mongodb.net', function (err, response) {
+  if (err) { console.log(err); }
+  else { console.log('Connected to ' + db, ' + ', response) }
+ })
  
  /**
   * Get port from environment and store in Express.
   */
-let db = dbConfig();
+// let db = dbConfig();
  var port = normalizePort(process.env.PORT || '3000');
  app.set('port', port);
  
