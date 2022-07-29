@@ -29,13 +29,13 @@ import { AddEditComponent } from './ticketlist/ticketlist/add_edit.component';
     ListModule,
     AuthModule,
     RouterModule.forRoot([
-         {path:"", component: IndexComponent},
+      {path:"", component: IndexComponent},
       {path: "ticketlist/list", component: ListComponent},
-  //  { path: "ticketlist/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
-  //  { path: "ticketlist/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
-    { path: "auth/signin", component: SignInComponent },
-   { path: "user/signup", component: SignUpComponent },
-     { path: "**", redirectTo: "" }
+  //  {path: "ticketlist/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
+  //  {path: "ticketlist/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
+      {path: "users/signin", component: SignInComponent},
+      {path: "users/signup", component: SignUpComponent},
+      {path: "**", redirectTo: "" }
     ])
   ],
   providers: [

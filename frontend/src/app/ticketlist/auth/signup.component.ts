@@ -20,7 +20,7 @@ export class SignUpComponent {
     signup(form: NgForm) {
         if (form.valid) {
             //see if passwords match
-            if(this.user.password == this.confirmPassword){
+            if(this.user.password != ""){
                 this.auth.signupUser(this.user)
                     .subscribe(response => {
                         console.log(response);
