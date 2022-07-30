@@ -110,8 +110,8 @@ module.exports.processEdit = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
 
     try{
-
-        console.log(req.body.ticketDescription);
+        // req.body.ticketStatus = 'Cancelled';
+        // console.log(req.body.ticketDescription);
         
         let id = req.params.id            
     
@@ -198,9 +198,7 @@ module.exports.processAdd = (req, res, next) => {
                 message: getErrorMessage(error)
             }
           );
-    }
-
-    
+    }    
 }
 
 

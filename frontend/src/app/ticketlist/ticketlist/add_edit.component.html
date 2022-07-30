@@ -8,7 +8,7 @@ July 25th, 2022 -->
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
-            <h1> {{editing ? "Edit": "Update  Ticket" }} Item</h1>
+            <h1> {{editing ? "Edit": "Update  Ticket" }} Item</h1>            
 
             <form ngNativeValidate #form="ngForm" (ngSubmit)="save(form)">
                 <div class="form-group">
@@ -30,7 +30,7 @@ July 25th, 2022 -->
                         id="emailTextField"
                         placeholder="Enter your email"
                         name="email" 
-                        [(ngModel)]="item.email"
+                        [(ngModel)]="item.email"                        
                         required>
                        
                 </div>
@@ -41,6 +41,7 @@ July 25th, 2022 -->
                         placeholder="New"
                         name="ticketStatus" 
                         [(ngModel)]="item.ticketStatus"
+                        value="item.ticketStatus"
                         required>                
                         <option selected value="New" name="New">New</option>
                         <option value="Cancelled" name="Cancelled">Cancelled</option>
@@ -81,7 +82,7 @@ July 25th, 2022 -->
                     Submit
                 </button>
                 
-                <a href="/" class="btn btn-warning">
+                <a href="ticketlist/list" class="btn btn-warning">
                     <i class="fas fa-undo"></i> 
                     Cancel
                 </a>
