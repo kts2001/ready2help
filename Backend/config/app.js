@@ -34,13 +34,12 @@ app.use(errorHandler);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  // next(createError(404));
    res.status(404).json(
      {
        statusCode: 404,
        message:"The endpoint does not exsists"
      }
-   )
+   );
  
  });
  

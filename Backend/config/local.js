@@ -39,7 +39,6 @@ module.exports = function() {
 
 
 
-
     passport.use(
         'login', 
         new LocalStrategy((username, password, done)=>{

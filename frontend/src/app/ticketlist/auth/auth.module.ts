@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
-import { ModelModule } from "../../model/model.module";
+import { ModelModule } from "src/app/model/model.module";
 import { PartialsModule } from '../partials/partials.module';
 import { SignInComponent } from "./signin.component";
 // import { SignUpComponent } from "./signup.component";
@@ -9,7 +9,7 @@ import { SignInComponent } from "./signin.component";
 @NgModule({
     imports: [ModelModule, BrowserModule, FormsModule, PartialsModule],
     declarations: [SignInComponent ],
-    exports : [SignInComponent ]
+    exports : [SignInComponent]
 })
 
 export class AuthModule {}
