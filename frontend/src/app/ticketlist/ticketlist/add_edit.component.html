@@ -4,12 +4,13 @@ July 25th, 2022 -->
 
 
 <!-- Content for the Add_Edit page -->
+<app-header></app-header>
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
-            <h1> {{editing ? "Edit": "Update  Ticket" }}Item</h1>
+            <h1> {{editing ? "Edit": "Update  Ticket" }} Item</h1>
 
-            <form novalidate #form="ngForm" (ngSubmit)="(form)">
+            <form novalidate #form="ngForm" (ngSubmit)="save(form)">
                 <div class="form-group">
                     <input type="hidden"
                         name="id"
@@ -41,7 +42,7 @@ July 25th, 2022 -->
                         name="ticketStatus" 
                         [(ngModel)]="item.ticketStatus"
                         required>                
-                        <option value="New" name="New">New</option>
+                        <option selected value="New" name="New">New</option>
                         <option value="Cancelled" name="Cancelled">Cancelled</option>
                         <option value="Resolved" name="Resolved">Resolved</option>
                     </select>
@@ -84,10 +85,8 @@ July 25th, 2022 -->
                     <i class="fas fa-undo"></i> 
                     Cancel
                 </a>
-
             </form>
         </div>
-
     </div>
 </div>
-
+<app-footer></app-footer>

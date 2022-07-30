@@ -20,29 +20,28 @@ export class AddEditComponent {
                     private router: Router,
                     activeRoute: ActivatedRoute)
      {
-        // if (ActivatedRoute.snapshot.params["mode"] == "delete"){
-        //     this.deleteItem(ActivatedRoute.snapshot.params["id"]);
-        // }
+        if (activeRoute.snapshot.params["mode"] == "delete"){
+            this.deleteItem(activeRoute.snapshot.params["id"]);
+        }
     
-        // this.editing = ActivatedRoute.snapshot.params["mode"]== "edit";
+        this.editing = activeRoute.snapshot.params["mode"]== "edit";
     
-        // if(this.editing){
-        //     this.item = repository.getItem(ActivatedRoute.snapshot.params["id"]);
-        // }
+        if(this.editing){
+            this.item = repository.getItem(activeRoute.snapshot.params["id"]);
+        }
         // else{
         //     this.item.size = new Size();
         // }
     }
-}
 
-// save(form: NgForm){
-//     this.repository.saveTickets(this.item);
-//     this.router.navigateByUrl("ticketlist/list");
-// }
-
-// private deleteItem(id: string){
-//     this.repository.deleteInventory(id);
-//     this.router.navigateByUrl("ticketlist/list");
-// }
+    save(form: NgForm){
+        console.log("form submitting");
+        this.repository.saveTickets(this.item);    
+        this.router.navigateByUrl("ticketlist/list");
+    }
     
- 
+    private deleteItem(id: string){
+        this.repository.deleteTickets(id);
+        this.router.navigateByUrl("ticketlist/list");
+    }
+}     

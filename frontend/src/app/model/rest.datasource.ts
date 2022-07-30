@@ -30,7 +30,7 @@ export class RestDataSource {
         return this.http.post<Tickets>(
                 this.baseUrl + "ticketlist/add",
                 item, 
-                // this.provideToken()
+                this.getOptions()
             ).pipe(map(response => {
                 return response;
             }),
@@ -39,9 +39,6 @@ export class RestDataSource {
                 return (error.error);
             }));
     }
-
-
-
 
     updateTickets(item: Tickets): Observable<Tickets> {
         return this.http.put<Tickets>(`${this.baseUrl} ticketlist/edit/${item._id})`,
@@ -76,10 +73,7 @@ export class RestDataSource {
             return response;
         }))
     }
-
-
-
-
+    
     private getOptions() {
         return {
             headers: new HttpHeaders({
