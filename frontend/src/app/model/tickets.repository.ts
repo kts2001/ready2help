@@ -43,7 +43,8 @@ export class TicketsRepository {
     }
 
     setToCancelled(id: string){
-        this.getItem(id).ticketStatus = 'Cancelled';        
-        this.dataSource.updateTickets(this.getItem(id));
+        // var t = this.getItem(id);
+        // t.ticketStatus = 'Cancelled';
+        // return this.dataSource.updateTickets(t);
     }
 }

@@ -8,8 +8,5 @@ export class Tickets {
            public ticketDescription?: String,
            public recordnum?: Date,
            public ticketPriority?: String
-    ) {}
-
-
-        
+    ) {}        
 }

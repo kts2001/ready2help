@@ -35,29 +35,20 @@ list.ejs
                         
                         <!-- <% if(ticket[count].ticketStatus == 'Cancelled'){ }} -->
                         <!--NEED TO FIX THIS-->
-                          <td *ngIf="item.ticketStatus == 'Cancelled'" class="text-center" colspan="2">
-                            <a class="btn btn-success btn-sm">
-                              Ticket Status Cancelled</a    >      
-                          </td>                            
-                          <td *ngElseIf="item.ticketStatus != 'Cancelled'" class="text-center" colspan="2" hidden>
+                          <td *ngIf="item.ticketStatus == 'Cancelled'; else elseBlock" class="text-center" colspan="2">
                             <a class="btn btn-success btn-sm">
                               Ticket Status Cancelled</a>      
                           </td>                         
-                                               
-                          <td *ngIf="item.ticketStatus != 'Cancelled'"  class="text-center">
+                          <ng-template #elseBlock>                                                                         
+                          <td class="text-center">
                             <button [routerLink]="['/ticketlist/edit/', item._id]" class="btn bg-primary btn-primary btn-sm"><i class="fas fa-pencil-alt px-3"></i>Edit</button>
                                 
-                        </td>
-                        <td *ngElseIf="item.ticketStatus == 'Cancelled'"  class="text-center" hidden>                          
-                              
-                      </td>
-  
-                      <td *ngIf="item.ticketStatus != 'Cancelled'" class="text-center">
-                        <a (click)="item.ticketStatus = 'Cancelled'" class="btn btn-danger btn sm" ><i class="fas fa-trash-alt"></i>Delete</a>
+                        </td>                          
+                      <td class="text-center">
+                        <a (click)="deleteMethod(item._id)" class="btn btn-danger btn sm" ><i class="fas fa-trash-alt"></i>Delete</a>
                           
-                      </td>
-                      <td *ngElseIf="item.ticketStatus == 'Cancelled'" class="text-center" hidden>                        
-                      </td>
+                      </td>                      
+                    </ng-template>   
                     </tr>          
             </table>            
         </div>
