@@ -19,8 +19,10 @@ export class SignUpComponent {
 
     signup(form: NgForm) {
         if (form.valid) {
-            // Checks if the passwords match.
-            if(this.user.password == this.confirmPassowrd){
+
+            //see if passwords match
+            if(this.user.password != ""){
+
                 this.auth.signupUser(this.user)
                     .subscribe(response => {
                         console.log(response);
@@ -29,7 +31,9 @@ export class SignUpComponent {
                             alert(response.message);
                             this.router.navigateByUrl("/users/signin");
                         }
-                        // Error message from the API.
+
+                        // error message
+
                         this.message = response.message; 
                     });
             } else {

@@ -25,10 +25,10 @@ import {AuthGuard} from "./ticketlist/auth/auth.guard";
     BrowserModule,
     IndexModule,
     PartialsModule,
-   ListModule,
-   AuthModule,
+    ListModule,
+    AuthModule,
     RouterModule.forRoot([
-         {path:"", component: IndexComponent},
+      {path:"", component: IndexComponent},
       {path: "ticketlist/list", component: ListComponent},
     { path: "ticketlist/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
    { path: "ticketlist/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
