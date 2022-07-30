@@ -141,7 +141,7 @@ module.exports.performDelete = (req, res, next) => {
                 {
                     sucess: true,
                     message: 'Items status has been cancelled'
-                }
+                }                
             );
             }
         });
