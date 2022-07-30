@@ -13,7 +13,7 @@ import { ResponseModel } from "./response.model";
 
     constructor(private datasource: RestDataSource) { }
 
-    authenticate(username: string, password: string): Observable<boolean> {
+    authenticate(username: string, password: string): Observable<ResponseModel> {
         return this.datasource.authenticate(username, password)
             .pipe(map(response => {
                 if(response)

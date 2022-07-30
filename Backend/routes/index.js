@@ -3,14 +3,12 @@ var router = express.Router();
 let controllerIndex = require('../controller/index');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Ready2Help About us' });
-});
+router.get('/', controllerIndex.home); 
 
 
-/* GET Main page */
+// /* GET Main page */
 
-router.get('/', controllerIndex.home);
+// router.get('/', controllerIndex.home);
 
 module.exports = router;
 

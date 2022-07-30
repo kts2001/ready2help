@@ -10,7 +10,8 @@
                 {{message}}
             </div>
 
-            <form novalidate #form="ngForm" (ngSubmit)="signup(form)">            
+            <form novalidate #form="ngForm" (ngSubmit)="signup(form)">
+            <!-- <form action="/users/signup" method="post" validate> -->
                 <div class="form-group">
                     <label>First Name:</label>
                     <input type="text" name="firstName" [(ngModel)]="user.firstName" class="form-control"/>

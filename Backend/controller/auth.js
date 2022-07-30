@@ -18,20 +18,20 @@ function getErrorMessage(err){
 // helper function for guard purposes
 exports.requireAuth = function(req, res, next)
 {
-    passport.authenticate('tokencheck', {session: false}, function(err, user, info){
+    passport.authenticate('tokencheck', { session: false }, function(err, user, info) {
         if (err) return res.status(401).json(
-            {
-                success: false,
-                message: getErrorMessage(err)
-            }
+          { 
+            success: false, 
+            message: getErrorMessage(err)
+          }
         );
         if (info) return res.status(401).json(
-            {
-                success:false,
-                message: info.message
-            }
+          { 
+            success: false, 
+            message: info.message
+          }
         );
-        req.user = user;
+        req.payload = user;
         next();
-    })(req,res,next);
+      })(req, res, next);
 }

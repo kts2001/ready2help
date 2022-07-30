@@ -8,6 +8,7 @@ import { AuthService } from "../../model/auth.service";
 })
 
 export class SignInComponent {
+    public title: string ='Sign';
     public username: string;
     public password: string;
     public message: string;

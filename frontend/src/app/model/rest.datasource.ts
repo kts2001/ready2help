@@ -4,8 +4,9 @@ import { Observable} from "rxjs";
 import { HttpHeaders } from '@angular/common/http';
 import { Tickets} from './tickets.model';
 import { User } from "./user.model";
-import { map } from "rxjs/operators";
+import { catchError, map } from "rxjs/operators";
 import { ResponseModel } from "./response.model";
+import { environment } from "src/environments/environment";
 
 
 const PROTOCOL = "http";
@@ -26,13 +27,27 @@ export class RestDataSource {
     }
 
     insertTickets(item: Tickets): Observable<Tickets> {
-        return this.http.post<Tickets>(this.baseUrl + "ticketlist/add",
-        item, this.getOptions());
+        return this.http.post<Tickets>(
+                this.baseUrl + "ticketlist/add",
+                item, 
+                // this.provideToken()
+            ).pipe(map(response => {
+                return response;
+            }),
+            catchError(error => {
+                console.log(error.error);
+                return (error.error);
+            }));
     }
+
+
+
 
     updateTickets(item: Tickets): Observable<Tickets> {
         return this.http.put<Tickets>(`${this.baseUrl} ticketlist/edit/${item._id})`,
-        item, this.getOptions());
+        item,
+        
+        this.getOptions());
     }
 
     deleteTickets(id: string): Observable<ResponseModel> {
@@ -42,12 +57,18 @@ export class RestDataSource {
         }));
     }
 
-    authenticate(username: string, pass: string): Observable<boolean> {
-        return this.http.post<any>(this.baseUrl + "users/signin", {
-        }).pipe(map(response => {
+    authenticate(user: string, pass: string): Observable<ResponseModel> {
+        return this.http.post<any>(this.baseUrl + "users/signin",
+         {
+            username: user,
+            password: pass
+
+        }).pipe
+        (map(response => {
             this.auth_token = response.sucess ? response.token : null;
-            return response.success;
-        }))
+            return response;
+        }),
+         catchError(error => {return (error.error)}));
     }
 
     signupUser(user: User): Observable<ResponseModel> {
