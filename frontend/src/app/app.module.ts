@@ -9,9 +9,8 @@ import {ListComponent} from "./ticketlist/ticketlist/list.component";
 import {ListModule} from "./ticketlist/ticketlist/list.module";
 import { AuthModule } from './ticketlist/auth/auth.module';
 import { SignInComponent } from './ticketlist/auth/signin.component';
- // import { SignUpComponent } from "./ticketlist/auth/signup.component";
+import { SignUpComponent } from "./ticketlist/auth/signup.component";
 import { AddEditComponent } from './ticketlist/ticketlist/add_edit.component';
-
 import {AuthGuard} from "./ticketlist/auth/auth.guard";
 
 
@@ -34,7 +33,7 @@ import {AuthGuard} from "./ticketlist/auth/auth.guard";
     { path: "ticketlist/:mode", component: AddEditComponent, canActivate: [AuthGuard]},
    { path: "ticketlist/:mode/:id", component: AddEditComponent, canActivate: [AuthGuard] },
     { path: "users/signin", component: SignInComponent },
-  //  { path: "user/signup", component: SignUpComponent },
+{ path: "users/signup", component: SignUpComponent },
      { path: "**", redirectTo: "" }
     ])
   ],
