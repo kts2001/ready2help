@@ -9,7 +9,7 @@ export class TicketsRepository {
 
     constructor(private dataSource: RestDataSource) {
         dataSource.getTicketList().subscribe(data => {
-            this.Tickets =data;
+            this.Tickets = data;
         });
     }
 
@@ -18,11 +18,12 @@ export class TicketsRepository {
     }
 
     getItem(id: string): Tickets {
-        return (this.Tickets.find(item => item._id ===id)!);
+        return (this.Tickets.find(item => item._id === id)!);
     }
 
     saveTickets(item: Tickets) {
-        if (item._id ==null || item._id == "") {
+        console.log("working here");
+        if (item._id == null || item._id == "") {
             this.dataSource.insertTickets(item).subscribe(p => this.Tickets.push(p));
         }else {
             this.dataSource.updateTickets(item).subscribe(p => {
@@ -38,6 +39,11 @@ export class TicketsRepository {
             }else {
                 alert(response.message);
             }
-        });
+        });    
+    }
+
+    setToCancelled(id: string){
+        this.getItem(id).ticketStatus = 'Cancelled';        
+        this.dataSource.updateTickets(this.getItem(id));
     }
 }

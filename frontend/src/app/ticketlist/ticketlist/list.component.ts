@@ -25,8 +25,8 @@ export class ListComponent {
 
         deleteMethod(id: string) {
             if(confirm('Do you want to delete this ticket?')) {
-                this.router.navigateByUrl("contactlist/delete/"+id);
+                this.repository.setToCancelled(id);
+                this.router.navigateByUrl("ticketlist/list");
             }
         }
-
 }

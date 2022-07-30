@@ -7,9 +7,9 @@ July 25th, 2022 -->
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
-            <h1> {{editing ? "Edit": "Update  Ticket" }}Item</h1>
+            <h1> {{editing ? "Edit": "Update  Ticket" }} Item</h1>
 
-            <form novalidate #form="ngForm" (ngSubmit)="(form)">
+            <form novalidate #form="ngForm" (ngSubmit)="save(form)">
                 <div class="form-group">
                     <input type="hidden"
                         name="id"
