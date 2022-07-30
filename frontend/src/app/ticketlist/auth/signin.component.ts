@@ -17,8 +17,9 @@ export class SignInComponent {
         private auth: AuthService) { }
 
     authenticate(form: NgForm) {
+        console.log("working here")
         if (form.valid) {
-            
+            console.log("still working");
             this.auth.authenticate(this.username, this.password)
                 .subscribe(response => {
                     if (response) {

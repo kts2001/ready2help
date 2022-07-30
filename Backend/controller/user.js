@@ -79,12 +79,12 @@ module.exports.signin = function(req,res,next) {
   passport.authenticate(
    'login', 
 
-   async (err, user, info) => {
+  async (err, user, info) => {
   try{
     if (err || !user){
       return res.status(400).json(
           {
-              sucess: false,
+              success: false,
               message: err || info.getErrorMessage
           }
       );
@@ -98,7 +98,7 @@ module.exports.signin = function(req,res,next) {
             return next(error);  
           }
           const payload = {id: user._id, email:user.email }; // from jwt website
-          const token =jwt.sign(
+          const token = jwt.sign(
               { 
                   payload: payload
               },
