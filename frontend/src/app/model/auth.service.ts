@@ -46,7 +46,4 @@ import { ResponseModel } from "./response.model";
     set redirectUrl(url: string){
         this._redirectUrl = url;
     }
-
-
-
 }
