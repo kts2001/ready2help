@@ -41,10 +41,4 @@ export class TicketsRepository {
             }
         });    
     }
-
-    setToCancelled(id: string){
-        // var t = this.getItem(id);
-        // t.ticketStatus = 'Cancelled';
-        // return this.dataSource.updateTickets(t);
-    }
 }

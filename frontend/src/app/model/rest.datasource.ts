@@ -42,13 +42,26 @@ export class RestDataSource {
 
     updateTickets(item: Tickets): Observable<Tickets> {
         return this.http.put<Tickets>(`${this.baseUrl} ticketlist/edit/${item._id})`,
-        item,
-        
+        item,        
         this.getOptions());
     }
 
+    // updateTicketStatus(item: Tickets): Observable<Tickets> {
+    //     return this.http.put<Tickets>(`${this.baseUrl} ticketlist/delete/${item._id})`,
+    //     item,        
+    //     this.getOptions());
+    // }
+
     deleteTickets(id: string): Observable<ResponseModel> {
-        return this.http.delete<any>(`${this.baseUrl}ticketlist/delete/${id}`,
+        return this.http.put<any>(`${this.baseUrl}ticketlist/delete/${id}`, 
+        //changed this to a put because we need to just update the one field instead of deleting
+        //this is where the root of the issue it I believe
+        //think that this linked with the tickets.repository.ts method of deleteTickets
+        //are the ones that are causing issues
+        //our delete isnt a true delete, its just updating the one field so technically its a put method
+        //but all of the stuff we had that the teacher gave us deals with actual deletion, so we need to figure out how to modify 
+        //the code so that we can put instead of delete
+        //check the routes in the backend too -- I changed it to a put in there because like I said its not truly a delete
         this.getOptions()).pipe(map(response => {
             return response;
         }));

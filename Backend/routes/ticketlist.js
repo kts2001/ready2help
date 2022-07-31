@@ -38,7 +38,7 @@ let authController = require('../controller/auth');
 router.get('/list', ticketController.tickets);
 router.post('/add', authController.requireAuth, ticketController.processAdd);
 router.put('/edit/:id', authController.requireAuth,  ticketController.processEdit);
-router.delete('/delete/:id', authController.requireAuth, ticketController.performDelete);
+router.put('/delete/:id', authController.requireAuth, ticketController.performDelete);
 
 //router.post('/delete/:id', requireAuth, ticketController.performDelete);
 
